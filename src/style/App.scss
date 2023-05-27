@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Tenor+Sans&family=Ubuntu:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Roboto:wght@300;400;500;700&family=Tenor+Sans&family=Ubuntu:ital,wght@0,400;0,700;1,300&display=swap');
+
+* {
+    padding : 0%;
+    margin: 0%;
+    // background-color: rgb(148, 148, 67);
+}
+h1{
+    padding: 1rem ;
+    font-family: 'Merriweather', serif;
+    padding-bottom: 0%;
+    font-size: 60px;
+
+    .logo{
+        color: rgb(141, 46, 12);
+        font-size: 3rem;
+    }
+}
+ul{
+    font-family:Cambria, Georgia, Times, 'Times New Roman', serif;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

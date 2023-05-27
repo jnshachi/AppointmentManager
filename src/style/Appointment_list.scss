@@ -1,0 +1,41 @@
+ li{
+        display: flex;
+        align-items: flex-start;
+        padding: 1rem;
+        width: 95%;
+
+        button{
+            padding: 0.375rem;
+            margin: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: rgb(255, 29, 29);
+            color: white;
+            transition: background-color 0.3s;
+
+            &:hover{
+                background-color: rgb(141, 75, 75);
+            }
+        }
+        .appointment-details{
+            flex-grow: 1;
+
+            .name_date{
+                align-items: center;
+                display: flex ;
+            
+                .patName{
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                    color: rgb(137, 48, 57);
+                    margin-right: 1rem;
+                }
+                .aptDate{
+                    flex-grow:1;
+                    text-align: right;
+                }
+            }
+            .aptNotes{
+                line-height: 1.5;
+            }
+        }
+    }
