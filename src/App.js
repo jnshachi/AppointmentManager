@@ -31,6 +31,7 @@ function App() {
     fetch('./data.json')
       .then(response => response.json())
       .then(data =>{
+        console.log(data);
         setAppointmentData(data)
       });
   } ,[])
@@ -44,7 +45,7 @@ function App() {
     <div className="App">
       <h1><BiCalendar className='logo'/> Your Appointments</h1>
       <AddAppointment
-        onSendAppointment ={myAppointment => setAppointmentData({...AppointmentData,myAppointment})}
+        onSendAppointment ={myAppointment => setAppointmentData([...AppointmentData,myAppointment])}
         lastId = {AppointmentData.reduce((max,item)=>Number(item.id)>max ? Number(item.id):max,0)}
         />
       <Search query = {query}
