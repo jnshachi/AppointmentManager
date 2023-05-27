@@ -10,7 +10,7 @@
 6. Conclusion
 
 ## 1. Introduction
-The Appointment Management System is a web application built using React that allows users to manage appointments. Users can add new appointments, search for appointments, and sort them based on different criteria.
+The Appointment Management System is a web application built using React that allows users to manage appointments. Users can add new appointments, search for appointments, delete the appointments and sort them based on different criteria.
 
 ## 2. Installation and Setup
 To set up and run the project locally, follow these steps:
