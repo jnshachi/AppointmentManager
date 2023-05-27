@@ -1,70 +1,104 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Appointment Management System Documentation
 
-## Available Scripts
+## Table of Contents
+1. Introduction
+2. Installation and Setup
+3. Usage
+4. Components
+5. File Structure
+6. Conclusion
 
-In the project directory, you can run:
+## 1. Introduction
+The Appointment Management System is a web application built using React that allows users to manage appointments. Users can add new appointments, search for appointments, and sort them based on different criteria.
 
-### `npm start`
+## 2. Installation and Setup
+To set up and run the project locally, follow these steps:
+1. Ensure that you have Node.js and npm (Node Package Manager) installed on your machine.
+2. Clone the project repository from [GitHub](https://github.com/your-repo) or extract the provided code.
+3. Open a terminal or command prompt and navigate to the project's root directory.
+4. Run the following command to install the project dependencies:
+   ```
+   npm install
+   ```
+5. Once the installation is complete, start the development server using the following command:
+   ```
+   npm start
+   ```
+6. The application will be accessible in your web browser at `http://localhost:3000`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 3. Usage
+Upon running the application, you will see the Appointment Management System interface. It consists of the following main components:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3.1. Add Appointment
+The "Add Appointment" component allows you to create new appointments. To add an appointment, click on the "Add Appointment" button. A form will appear where you can enter the patient's name, appointment date, time, and additional notes. After filling in the details, click the "Submit" button to add the appointment. The newly added appointment will appear in the list.
 
-### `npm test`
+### 3.2. Search
+The "Search" component enables you to search for specific appointments based on the patient's name or appointment notes. To search for an appointment, enter the search query in the search input field. The list of appointments will automatically update to display the matching results. You can also sort the appointments by patient name or appointment date. Clicking the "Sort By" button provides options to select the sorting criteria (patient name or appointment date) and the sorting order (ascending or descending).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3.3. Appointment List
+The "Appointment List" component displays the list of appointments. Each appointment item shows the patient's name, appointment date, time, and additional notes. To delete an appointment, click on the trash icon button associated with the appointment.
 
-### `npm run build`
+## 4. Components
+The project consists of the following components:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4.1. App
+- This is the main component that acts as the entry point of the application.
+- It manages the state of the appointment data, search query, sorting criteria, and sorting order.
+- It fetches appointment data from the `data.json` file using the `fetchData` function.
+- It renders the other components: `AddAppointment`, `Search`, and `AppointmentList`.
+- It passes necessary props to the child components.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 4.2. AddAppointment
+- This component provides a form to add new appointments.
+- It manages the form state using the `formData` and `toogleForm` variables.
+- It triggers the `onSendAppointment` callback with the new appointment information when the form is submitted.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4.3. Search
+- This component handles the search functionality and sorting options.
+- It manages the state of the search query and toggling of the dropdown menu.
+- It triggers the `onQueryChange`, `onSortByChange`, and `onOrderByChange` callbacks based on user interactions.
+- It renders the dropdown menu using the `DropDown` component.
 
-### `npm run eject`
+### 4.4. DropDown
+- This
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ component represents the dropdown menu for selecting sorting criteria and order.
+- It manages the state of the selected sorting criteria and order.
+- It triggers the `onSortByChange` and `onOrderByChange` callbacks when a menu item is clicked.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4.5. AppointmentList
+- This component displays the list of appointments.
+- It receives the appointment data as props and maps over it to render individual appointment items.
+- It triggers the `onDeleteAppointment` callback when the trash icon button is clicked.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 5. File Structure
+The project's file structure is organized as follows:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+- src/
+  - components/
+    - AddAppointment.js
+    - Search.js
+    - DropDown.js
+    - AppointmentList.js
+  - style/
+    - App.scss
+    - AddAppointment.scss
+    - Search.scss
+    - AppointmentList.scss
+  - App.js
+  - index.js
+  - data.json
+```
 
-## Learn More
+- The `src/components` directory contains the individual component files.
+- The `src/style` directory contains the corresponding SCSS stylesheets for each component.
+- The `App.js` file is the main component that renders other components and manages the application state.
+- The `index.js` file is the entry point of the application that renders the `App` component.
+- The `data.json` file contains the initial appointment data in JSON format.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 6. Conclusion
+The Appointment Management System provides a user-friendly interface for managing appointments. Users can add new appointments, search for specific appointments, and sort them based on different criteria. The React components in the project work together to achieve these functionalities effectively.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please note that this documentation provides a general overview of the project based on the provided code. If you need more detailed documentation or specific instructions, feel free to provide additional information or ask specific questions.
